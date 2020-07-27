@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+{% block content %}
+<div class="content-section d-flex flex-row-reverse">
+  <div class="col">
+    <p class="row-md-4 d-flex justify-content-end">
+      <a class="text-muted d-flex justify-content-end" href="{% url 'edit_profile' %}">Edit</a>
+    </p>
+  </div>
+  <div class="media col-md">
+    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
+    <div class="media-body">
+      <h2 class="account-heading">{{ user.username }}</h2>
+        <div class="col-md">
+          <p class="text-secondary row-md-8">{{ user.email }}</p>
+          <p class="text-secondary row-md-8">{{ user.profile.name }}</p>
+          <p class="text-secondary row-md-8">{{ user.profile.location }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}
